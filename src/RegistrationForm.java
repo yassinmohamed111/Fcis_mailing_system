@@ -3,13 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 public class RegistrationForm extends JDialog {
     private JTextField tfphone;
-    private JTextField tfEdu;
+    private JTextField tfAddress;
     private JPasswordField pfPassword;
     private JPasswordField pfConfirm;
     private JButton btnRegister;
@@ -50,12 +49,12 @@ public class RegistrationForm extends JDialog {
         String name = tfname.getText();
         String email = tfEmail.getText();
         String phone = tfphone.getText();
-        String education = tfEdu.getText();
+        String address = tfAddress.getText();
         String password = String.valueOf(pfPassword.getPassword());
         String confirmPassword = String.valueOf(pfConfirm.getPassword());
 
 
-        if ( user_id.isEmpty() ||name.isEmpty() || email.isEmpty() || phone.isEmpty() || education.isEmpty() || password.isEmpty()) {
+        if ( user_id.isEmpty() ||name.isEmpty() || email.isEmpty() || phone.isEmpty() || address.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this,
                     "Please enter all fields",
                     "Try again",
@@ -70,7 +69,7 @@ public class RegistrationForm extends JDialog {
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
-        user = addUserToDatabase(user_id , name, email, phone, education, password);
+        user = addUserToDatabase(user_id , name, email, phone, address, password);
         if (user != null) {
 
             userLoginHolder.getInstance().setuser(user);
@@ -88,7 +87,7 @@ public class RegistrationForm extends JDialog {
 
 
     public User user;
-    private User addUserToDatabase(String user_id , String name, String email, String phone, String education, String password)
+    private User addUserToDatabase(String user_id , String name, String email, String phone, String address, String password)
     {
         User user = null;
 
@@ -96,14 +95,14 @@ public class RegistrationForm extends JDialog {
             Connection conn = DatabaseConnection.getConnection();
             Statement stmt = conn.createStatement();
 
-            String sql = "INSERT INTO users (user_id , name, email, phone, education, password ) " +
+            String sql = "INSERT INTO users (user_id , name, email, phone, address, password ) " +
                     "VALUES (?,?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, user_id);
             preparedStatement.setString(2, name);
             preparedStatement.setString(3, email);
             preparedStatement.setString(4, phone);
-            preparedStatement.setString(5,education);
+            preparedStatement.setString(5,address);
             preparedStatement.setString(6, password);
 
             //Insert row into the table
@@ -114,7 +113,7 @@ public class RegistrationForm extends JDialog {
                 user.name = name;
                 user.email = email;
                 user.phone = phone;
-                user.education = education;
+                user.address = address;
                 user.password = password;
             }
 

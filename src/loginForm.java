@@ -85,7 +85,7 @@ public User user ;
                 user.name = resultSet.getString("name");
                 user.email = resultSet.getString("email");
                 user.phone = resultSet.getString("phone");
-                user.education = resultSet.getString("education");
+                user.address = resultSet.getString("address");
                 user.password = resultSet.getString("password");
             }
 
@@ -110,7 +110,7 @@ public User user ;
             System.out.println("         user_id: " + user.user_id);
             System.out.println("          Email: " + user.email);
             System.out.println("          Phone: " + user.phone);
-            System.out.println("          education: " + user.education);
+            System.out.println("          education: " + user.address);
         }
         else {
             System.out.println("Authentication canceled");

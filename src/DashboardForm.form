@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="DashboardForm">
-  <grid id="27dc6" binding="dashboardPanel" layout-manager="GridLayoutManager" row-count="8" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="dashboardPanel" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -16,7 +16,7 @@
         </constraints>
         <properties>
           <font name="Segoe UI Light" size="28" style="0"/>
-          <text value="FCIS mailing system"/>
+          <text value="online book store"/>
         </properties>
       </component>
       <component id="caec" class="javax.swing.JLabel" binding="lbAdmin">
@@ -39,16 +39,6 @@
           <text value="logout"/>
         </properties>
       </component>
-      <component id="492e6" class="javax.swing.JButton" binding="sendMailButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-2692366"/>
-          <font name="Segoe UI Light" size="20" style="0"/>
-          <text value="Send Mail"/>
-        </properties>
-      </component>
       <component id="fb7b3" class="javax.swing.JButton" binding="btnRegister">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -57,46 +47,6 @@
           <background color="-2692366"/>
           <font name="Segoe UI Light" size="20" style="0"/>
           <text value="Register"/>
-        </properties>
-      </component>
-      <component id="b2aef" class="javax.swing.JButton" binding="btnCreate">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-2692366"/>
-          <font name="Segoe UI Light" size="20" style="0"/>
-          <text value="create contact"/>
-        </properties>
-      </component>
-      <component id="ca005" class="javax.swing.JButton" binding="btnShow">
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-2692366"/>
-          <font name="Segoe UI Light" size="20" style="0"/>
-          <text value="show contact"/>
-        </properties>
-      </component>
-      <component id="9cd60" class="javax.swing.JButton" binding="inboxNotWorkingButton" default-binding="true">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-2692366"/>
-          <font name="Segoe UI Light" size="20" style="0"/>
-          <text value="inbox"/>
-        </properties>
-      </component>
-      <component id="91e79" class="javax.swing.JButton" binding="ShowGrades">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-2692366"/>
-          <font name="Segoe UI Light" size="20" style="0"/>
-          <text value="Show Grades"/>
         </properties>
       </component>
     </children>

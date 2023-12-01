@@ -48,7 +48,7 @@
             </constraints>
             <properties>
               <font name="Segoe UI Light" size="20" style="0"/>
-              <text value="fcis mailing system"/>
+              <text value="online book store"/>
             </properties>
           </component>
           <vspacer id="422b">

@@ -14,12 +14,7 @@ public class DashboardForm extends JFrame {
     private JPanel dashboardPanel;
     private JLabel lbAdmin;
     private JButton btnRegister;
-    private JButton btnCreate;
     private JButton btnCancel;
-    private JButton sendMailButton;
-    private JButton btnShow;
-    private JButton inboxNotWorkingButton;
-    private JButton ShowGrades;
 
 
     public DashboardForm() {
@@ -83,14 +78,7 @@ public class DashboardForm extends JFrame {
                 }
             }
         });
-        btnCreate.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ContactsForm contactsForm = new ContactsForm(DashboardForm.this);
-               contacts cont = contactsForm.cont;
 
-            }
-        });
         btnCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,52 +87,11 @@ public class DashboardForm extends JFrame {
 
         });
 
-        btnShow.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-                       ShowContact showContact = new ShowContact (DashboardForm.this);
-
-
-
-
-
-            }
-        });
         setVisible(true);
-        sendMailButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                User getuser = userLoginHolder.getInstance().getuser();
-                if ( getuser.name.contains("admin") )
-                {
 
-                }
-                else {
-                    sendmailtest sendmailtest = new sendmailtest(DashboardForm.this);
-                }
-            }
-        });
-        inboxNotWorkingButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-                User getuser = userLoginHolder.getInstance().getuser();
-                if ( getuser.name.contains("admin") )
-                {
 
-                }
-                else {
-                    reciveMail reciveMail = new reciveMail(DashboardForm.this);
-                }
-            }
-        });
-        ShowGrades.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              showGrades showGrades = new showGrades( DashboardForm.this);
-            }
-        });
     }
 
 
@@ -164,7 +111,7 @@ public class DashboardForm extends JFrame {
                     + "name VARCHAR(200) NOT NULL,"
                     + "email VARCHAR(200) NOT NULL UNIQUE,"
                     + "phone VARCHAR(200),"
-                    + "education VARCHAR(200),"
+                    + "address VARCHAR(200),"
                     + "password VARCHAR(200) NOT NULL"
                     + ")";
             statement.executeUpdate(sql);
