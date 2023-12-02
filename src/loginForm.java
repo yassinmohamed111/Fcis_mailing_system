@@ -67,7 +67,8 @@ public User user ;
 
 
         try{
-            Connection conn = DatabaseConnection.getConnection();
+            DatabaseConnectionInterface connection = new DatabaseConnectionProxy();
+            Connection conn = connection.getConnection();
             Statement stmt = conn.createStatement();
 
             String sql = "SELECT * FROM users  WHERE user_id=? AND email=? AND password=? ";

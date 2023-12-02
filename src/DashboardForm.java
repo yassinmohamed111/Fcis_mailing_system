@@ -102,7 +102,8 @@ public class DashboardForm extends JFrame {
 
         try{
 
-            Connection conn = DatabaseConnection.getConnection();
+            DatabaseConnectionInterface connection = new DatabaseConnectionProxy();
+            Connection conn = connection.getConnection();
             Statement statement = conn.createStatement();
 
             statement = conn.createStatement();
